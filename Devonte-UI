@@ -1,3 +1,29 @@
+--[[
+Example:
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NarwhalHacks/DevonteSite/master/Ui%20Lib"))()
+
+local a = Library:Window("Game")
+
+local b = a:Tab("Main")
+
+b:Button("Print", function()
+    print("Print")
+end)
+
+b:Toggle("State", function(state)
+    print(state)
+end)
+
+b:Slider("WalkSpeed", 0, 200, 16, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+b:Box("JumpPower", "Value", function(value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+b:Label("UI : Devonte")
+--]]
 for _, v in pairs(game.CoreGui:GetChildren()) do
 	if v.Name == "UILib" then
 		v:Destroy()
